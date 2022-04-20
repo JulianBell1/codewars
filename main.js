@@ -45,7 +45,7 @@ console.log(countBy(1, 10))
         let maps = x => x.map(num => num*2)
 
 
-// // APRIL 19 // //
+// // APRIL 19 // //  ------------------------------------------------------------------------------
 
           // 1. Description:  Make a simple function called greet that returns the most-famous "hello world!"
 
@@ -84,3 +84,85 @@ console.log(countBy(1, 10))
                     return total
                   }
                 }           
+
+
+// // APRIL 20 // //  ------------------------------------------------------------------------------
+
+                // 1. Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+
+                    function boolToWord( bool ){
+                      //...
+                      if (bool === true){
+                        return "Yes"
+                      } else if (bool === false){
+                        return "No"
+                      }
+                    }
+
+                        // alternative 
+
+                        function boolToWord( bool ){
+                          return bool ? 'Yes':'No';
+                        }
+
+
+                // 2. Alex just got a new hula hoop, he loves it but feels discouraged because his little brother is better than him
+
+                  // Write a program where Alex can input (n) how many times the hoop goes round and it will return him an encouraging message :)
+                                        
+                  // If Alex gets 10 or more hoops, return the string "Great, now move on to tricks".
+                  // If he doesn't get 10 hoops, return the string "Keep at it until you get it".
+
+
+
+                       function hoopCount (n) {
+                         if (n >= 10){
+                           return "Great, now move on to tricks"
+                         } else if (n < 10){
+                           return "Keep at it until you get it"
+                         }
+                        }
+
+                        // alternate
+
+                        function hoopCount (n) {
+  
+                          return n >= 10 ? "Great, now move on to tricks" : "Keep at it until you get it"
+                          
+                        }
+
+                // 3. Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+                          // Examples (Input -> Output):
+
+                          // * "String"      -> "SSttrriinngg"
+                          // * "Hello World" -> "HHeelllloo  WWoorrlldd"
+                          // * "1234!_ "     -> "11223344!!__  "
+
+
+                          function doubleChar(str) {                              // Needed help with this one. for loop makes sense, but indexing of string I wasn't sure on
+                            let doubleChar = ''
+                            for (let i = 0; i < str.length; i++){
+                              doubleChar += str[i] + str[i]
+                          }
+                            return doubleChar
+                          }
+
+
+                          // alternates from codewars solutions
+
+                          1. const doubleChar = (str) => str.split("").map(c => c + c).join("");       // I like this one the most
+
+                          2. function doubleChar(str) {
+                              return str.replace(/(.)/g, "$1$1")
+                              }
+
+
+                // 4. Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+
+                    // Note: input will never be an empty string
+
+
+                          let fakeBin = x => x.split("").map((x) => x >= 5 ? 1 : 0).join("")
+
+
+
