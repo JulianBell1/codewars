@@ -165,4 +165,84 @@ console.log(countBy(1, 10))
                           let fakeBin = x => x.split("").map((x) => x >= 5 ? 1 : 0).join("")
 
 
+                          //alternatives from solutions
+
+                          function fakeBin(x) {
+                            return x.replace(/\d/g, d => d < 5 ? 0 : 1);
+                          }
+
+
+                          function fakeBin(str){
+                            var newStr = "";
+                            for(var i=0;i<str.length;i++){
+                              if(Number(str[i])>=5){
+                                newStr += "1"
+                              }
+                              else{
+                                newStr += "0";
+                              }
+                            }
+                            return newStr;
+                          }
+
+
+                          function fakeBin(x){
+                            let result = '';
+                            for(let i = 0; i < x.length; i++){
+                              x[i] < 5 ? result += 0 : result += 1;
+                            }
+                            return result;
+                          }
+
+
+// // APRIL 21 // //  ------------------------------------------------------------------------------
+
+        //1. Bob need a fast way to calculate the volume of a cuboid with three values: length, width, and height of the cuboid. Write a function to help Bob with this calculation. 
+                
+              class Kata {
+                static getVolumeOfCuboid(length, width, height){
+                  return length * width * height
+                }
+              }
+
+              //alternate
+
+              const Kata = {
+                getVolumeOfCuboid : (length, width, height) => length * width * height
+              }
+            
+        //2. An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+            // Example: (Input --> Output)
+
+            // "Dermatoglyphics" --> true
+            // "aba" --> false
+            // "moOse" --> false (ignore letter case)
+
+
+            function isIsogram(str){
+ 
+              if (str === ''){
+                return true
+              }
+              
+              let arr = String(str).toLowerCase()
+              
+              for (let i = 0; i < arr.length; i++){
+                for (let j = i + 1; j < arr.length; j++){
+                  if (arr[i] === arr[j]){
+                    return false
+                  }
+                }
+              }
+              
+              return true
+              
+            }
+
+            //alternates 
+
+            function isIsogram(str){
+              return new Set(str.toUpperCase()).size == str.length;             //what is this?
+            }
 
