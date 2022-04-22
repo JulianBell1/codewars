@@ -246,3 +246,47 @@ console.log(countBy(1, 10))
               return new Set(str.toUpperCase()).size == str.length;             //what is this?
             }
 
+
+
+// // APRIL 22 // //  ------------------------------------------------------------------------------
+
+
+      // 1. Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of       //    petals it means they are in love.
+      //    Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
+
+      function lovefunc(flower1, flower2){
+        if (flower1 % 2 === 0 && flower2 %2 !== 0 || flower2 % 2 === 0 && flower1 %2 !== 0 ){
+          return true
+        } else {
+          return false
+        }
+      }
+
+        //alternate from codewars
+        
+        function lovefunc(flower1, flower2){
+          return flower1 % 2 !== flower2 % 2;
+        }
+
+    // 2. In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+            // Examples
+                  // 
+            // makeNegative(1);    // return -1
+            // makeNegative(-5);   // return -5
+            // makeNegative(0);    // return 0
+            // makeNegative(0.12); // return -0.12
+                  // 
+            // Notes  
+                  // 
+                // The number can be negative already, in which case no change is required.
+                // Zero (0) is not checked for any specific sign. Negative zeros make no mathematical sense.
+
+        function makeNegative(num) {
+          if (num > 0){
+              return -num
+          } else {
+            return num
+          }   
+        }
+
+
