@@ -290,3 +290,92 @@ console.log(countBy(1, 10))
         }
 
 
+    // 3. You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+          // #Examples:
+
+          // Kata.getMiddle("test") should return "es"
+
+          // Kata.getMiddle("testing") should return "t"
+
+          // Kata.getMiddle("middle") should return "dd"
+
+          // Kata.getMiddle("A") should return "A"
+
+          // #Input
+
+          // A word (string) of length 0 < str < 1000 (In javascript you may get slightly more than 1000 in some test cases due to an error in the test cases). You do not need to test for this. This is only here to tell you that you do not need to worry about your solution timing out.
+
+          // #Output
+
+          // The middle character(s) of the word represented as a string.
+
+
+          function getMiddle(s){
+            if(s.length % 2 === 0){
+              let centerLeft = s[(s.length/2) - 1]
+              let centerRight = s[(s.length/2)]
+              return centerLeft + centerRight
+            } else {
+              let middle = s[Math.floor(s.length/2)]
+              return middle
+            }
+          } 
+
+
+          //alternate from solutions 
+
+          function getMiddle(s)
+          {
+            return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
+          }
+
+
+// // APRIL 26 // //  ------------------------------------------------------------------------------
+
+    //1. 8kyu
+
+          // You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.
+          // If it is a square, return its area. If it is a rectangle, return its perimeter.
+
+          // area_or_perimeter(6, 10) --> 32
+          // area_or_perimeter(3, 3) --> 9
+
+          // Note: for the purposes of this kata you will assume that it is a square if its length and width are equal, otherwise it is a rectangle.
+    
+          
+          const areaOrPerimeter = function(l , w) {
+            if (l === w){
+              return l * w
+            } else {
+              return 2*(l + w)
+            }
+          };
+
+          const areaOrPerimeter = (l, w) => l === w ? l * w : 2 * (l + w)
+
+
+    // 2. 7kyu
+            // Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+            // Examples:
+            // Input: 42145 Output: 54421
+            // Input: 145263 Output: 654321
+            // Input: 123456789 Output: 987654321
+
+
+            function descendingOrder(n){
+              return Number(n.toString().split('').sort((a,b)=> b-a).join(''));
+            }
+
+    // 3. 7kyu
+            // Complete the solution so that it reverses the string passed into it.
+
+            // 'world'  =>  'dlrow'
+            // 'word'   =>  'drow'
+
+            function solution(str){
+              return str.split('').reverse().join('')
+            }
+    
+    
+    
